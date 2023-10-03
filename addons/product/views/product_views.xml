@@ -52,7 +52,7 @@
                                       <button name="open_pricelist_rules" icon="fa-arrow-right" type="object"
                                         groups="product.group_product_pricelist" class="oe_inline">
                                         <field name="pricelist_item_count" attrs="{'invisible': [('pricelist_item_count', '=', 0)]}"/>
-                                        <span attrs="{'invisible': [('pricelist_item_count', '=', 1)]}">
+                                        span attrs="{'invisible': [('pricelist_item_count', '=', 1)]}">
                                           Extra Prices
                                         </span>
                                         <span attrs="{'invisible': [('pricelist_item_count', '!=', 1)]}">
@@ -60,9 +60,9 @@
                                         </span>
                                       </button>
                                     </div>
-                                    <label for="standard_price" groups="base.group_user" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
+                                    <label for="standard_price" invisible="1" groups="base.group_user" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
                                     <div name="standard_price_uom" groups="base.group_user" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}" class="o_row">
-                                        <field name="standard_price" widget='monetary' options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
+                                        <field name="standard_price" invisible="1" widget='monetary' options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
                                         <span groups="uom.group_uom" class="oe_read_only">per
                                             <field name="uom_name"/>
                                         </span>
@@ -241,7 +241,7 @@
                                 <div class="o_row col-5 pl-0">
                                     <field name="lst_price" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" attrs="{'readonly': [('product_variant_count', '&gt;', 1)]}"/>
                                 </div>
-                                <field name="standard_price" invisible="1" widget='monetary' options="{'currency_field': 'cost_currency_id'}"/>
+                                <field name="standard_price" widget='monetary' options="{'currency_field': 'cost_currency_id'}"/>
                                 <field name="currency_id" invisible='1'/>
                                 <field name="cost_currency_id" invisible="1"/>
                             </group>
